@@ -1,4 +1,4 @@
-# Documentation for Pet Clinic App
+# Docs for Pet Clinic App
 
 ## More docs to follow
 
