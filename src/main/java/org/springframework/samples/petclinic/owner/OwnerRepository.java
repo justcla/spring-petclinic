@@ -25,14 +25,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 /**
- * Repository class for <code>Owner</code> domain objects All method names are compliant
+ * Change class for <code>Owner</code> domain objects All method names are compliant
  * with Spring Data naming conventions so this interface can easily be extended for Spring
  * Data. See:
  * https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation
  *
- * @author Ken Krebs
- * @author Juergen Hoeller
- * @author Sam Brannen
+
  * @author Michael Isvy
  * @author Wick Dynex
  */
@@ -41,6 +39,9 @@ public interface OwnerRepository extends JpaRepository<Owner, Integer> {
 	/**
 	 * Retrieve all {@link PetType}s from the data store.
 	 * @return a Collection of {@link PetType}s.
+	 */
+	@Query("SELECT ptype FROM PetType ptype ORDER BY ptype.name")
+	List<PetType> findPetTypes();
 	 */
 	@Query("SELECT ptype FROM PetType ptype ORDER BY ptype.name")
 	List<PetType> findPetTypes();
